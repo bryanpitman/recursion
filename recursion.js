@@ -37,35 +37,83 @@ function everyOther(str) {
 
 /** find: return boolean depending on if val exists in array or not. */
 
-function find(arr, val) {}
+function find(arr, val, i = 0) {
+
+  if (arr.length === i) {
+    return false;
+  }
+
+  if (arr[i] === val) {
+    return true;
+  } else {
+    return find(arr, val, i + 1);
+  }
+}
+
 
 /** isPalindrome: checks whether a string is a palindrome or not. */
 
-function isPalindrome(str) {}
+// function isPalindrome(str) {
+//   let reverse = '';
+
+//   function reversesStr(str, i) {
+//     if (i < 0) return;
+//     reverse = reverse + str[i];
+//     reversesStr(str, i - 1);
+//   }
+
+//   reversesStr(str, str.length - 1);
+//   if (str === reverse) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+function isPalindrome(str, i = 0, e = str.length - 1) {
+  if (i === e) {
+    return true;
+  }
+  if (i > e && str[i] === str[e]) {
+    return true;
+  }
+
+  if (str[i] !== str[e]) {
+    return false;
+  } else {
+    return isPalindrome(str, i + 1, e - 1);
+  }
+}
+
 
 /** revString: return a copy of a string, but in reverse. */
 
-function revString(str) {}
+function revString(str, i = str.length - 1) {
+  if (i < 0) return '';
+
+  return str[i] + revString(str, i - 1);
+}
+
 
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
 
-function findIndex(arr, val) {}
+function findIndex(arr, val) { }
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 
-function gatherStrings(obj) {}
+function gatherStrings(obj) { }
 
 // FURTHER STUDY
 
 /** binarySearch: given a sorted array of numbers, and a value,
  * return true if val is in array, false if not present). */
 
-function binarySearch(arr, val) {}
+function binarySearch(arr, val) { }
 
 /** binarySearch: given a sorted array of numbers, and a value,
  * return the index of that value (or -1 if val is not present). */
 
-function binarySearchIndex(arr, val) {}
+function binarySearchIndex(arr, val) { }
 
 // you might find the above two problems easier if you change the function signature to:
 //
