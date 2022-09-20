@@ -190,7 +190,6 @@ function binarySearch(arr, val, start = 0, end = arr.length - 1) {
 }
 //binarySearch([1, 2, 3, 4], 4);
 
-
 /** binarySearch: given a sorted array of numbers, and a value,
  * return the index of that value (or -1 if val is not present). */
 
@@ -215,7 +214,6 @@ function binarySearchIndex(arr, val, start = 0, end = arr.length - 1) {
   } else {
     return binarySearchIndex(arr, val, start, (end = mid - 1));
   }
-
 }
 
 //binarySearchIndex([1, 2, 3, 4], 4)
